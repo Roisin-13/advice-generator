@@ -2,6 +2,9 @@
 import './App.css';
 import axios from 'axios';
 import {useState} from 'react';
+import {ReactComponent as IconDice} from './icon-dice.svg';
+import {ReactComponent as BigDivider} from './pattern-divider-desktop.svg';
+
 
 function App() {
 const [advice, setAdvice] = useState("");
@@ -9,28 +12,38 @@ const [advice, setAdvice] = useState("");
   async function gogetthatAdvice() {
     try {
       const response = await axios.get('https://api.adviceslip.com/advice');
-      //console.log(response.data.slip.advice);
-      //console.log(response.data.slip.id);
-      //setAdvice(response.data.slip);
       setAdvice(response.data.slip);
-      //console.log(advice);
     } catch (error) {
       console.error(error);
     }
   }
-gogetthatAdvice();
 
+const handleClick = (e) => {
+  e.preventDefault();
+  gogetthatAdvice();
+}
 
   return (
-    <div className="App">
-      <header className="App-header">
-        {/* <img src={logo} className="App-logo" alt="logo" /> */}
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-<p></p>
-      </header>
-    </div>
+    <>
+      <div className="App">
+        <div className="card">
+
+        <p>ADVICE # {advice.id}</p>
+      <p>"{advice.advice}"</p>
+      <form>
+        <button type="submit" onClick={handleClick}>
+        <IconDice />
+        </button>
+      </form>
+
+<BigDivider/>
+
+
+
+        </div>
+
+      </div>  
+    </>
   );
 }
 
