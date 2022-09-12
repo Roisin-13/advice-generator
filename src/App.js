@@ -1,11 +1,26 @@
-import logo from './logo.svg';
+//import logo from './logo.svg';
 import './App.css';
+import axios from 'axios';
 
 function App() {
+
+  async function getAdvice() {
+    try {
+      const response = await axios.get('https://api.adviceslip.com/advice');
+      console.log(response);
+      console.log("hi");
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  getAdvice();
+
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        {/* <img src={logo} className="App-logo" alt="logo" /> */}
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
