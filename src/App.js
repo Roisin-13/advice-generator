@@ -1,20 +1,24 @@
 //import logo from './logo.svg';
 import './App.css';
 import axios from 'axios';
+import {useState} from 'react';
 
 function App() {
+const [advice, setAdvice] = useState("");
 
-  async function getAdvice() {
+  async function gogetthatAdvice() {
     try {
       const response = await axios.get('https://api.adviceslip.com/advice');
-      console.log(response);
-      console.log("hi");
+      //console.log(response.data.slip.advice);
+      //console.log(response.data.slip.id);
+      //setAdvice(response.data.slip);
+      setAdvice(response.data.slip);
+      //console.log(advice);
     } catch (error) {
       console.error(error);
     }
   }
-
-  getAdvice();
+gogetthatAdvice();
 
 
   return (
@@ -24,14 +28,7 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+<p></p>
       </header>
     </div>
   );
