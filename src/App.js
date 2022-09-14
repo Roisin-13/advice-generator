@@ -27,19 +27,14 @@ const handleClick = (e) => {
     <>
       <div className="App">
         <div className="card">
-
-        <p>ADVICE # {advice.id}</p>
-      <p>"{advice.advice}"</p>
-      <form>
+        <p className="number">ADVICE # {advice.id}</p>
+        <p className='advice'>&#8220;{advice.advice}&#8221;</p>
+ 
         <button type="submit" onClick={handleClick}>
         <IconDice />
         </button>
-      </form>
 
-<BigDivider/>
-
-
-
+      <BigDivider/>
         </div>
 
       </div>  

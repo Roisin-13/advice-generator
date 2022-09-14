@@ -1,14 +1,18 @@
+@media only screen and (max-width: 375px) {
+  .card {
+    /* background-color: hsl(217, 19%, 24%); */
+    background-color: pink;
+  }
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 /*===============================*/
-
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap');
 .App {
   /*hsl(218, 23%, 16%)*/
   text-align: center;
@@ -24,21 +28,41 @@ body {
 
 .card {
   position: relative;
-  width: 30vw;
+  max-width: 600px;
   height: 300px;
   border-radius: 20px;
   background-color: hsl(217, 19%, 24%);
 }
+
+p{
+  font-family: 'Manrope', sans-serif;
+}
+
+.number {
+  color: #52ffa8;
+  font-size: 12px;
+}
+
+.advice {
+  color: white;
+  font-size: 28px;
+}
+
 button {
   cursor: pointer;
   position: absolute;
   top: 275px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
   height: 50px;
   width: 50px;
   border-radius: 50%;
   background-color: #52ffa8;
   border: none;
 }
+
 button:hover {
   box-shadow: 0 0 30px #52ffa8;
 }
