@@ -4,7 +4,7 @@ import axios from 'axios';
 import {useState} from 'react';
 import {ReactComponent as IconDice} from './icon-dice.svg';
 import {ReactComponent as BigDivider} from './pattern-divider-desktop.svg';
-
+import {ReactComponent as SmallDivider} from './pattern-divider-mobile.svg';
 
 function App() {
 const [advice, setAdvice] = useState("");
@@ -27,14 +27,17 @@ const handleClick = (e) => {
     <>
       <div className="App">
         <div className="card">
-        <p className="number">ADVICE # {advice.id}</p>
-        <p className='advice'>&#8220;{advice.advice}&#8221;</p>
- 
-        <button type="submit" onClick={handleClick}>
-        <IconDice />
-        </button>
+          {/* */}
+        <p className="number">{advice !== ""? `ADVICE # ${advice.id}`: ""}</p>
 
-      <BigDivider/>
+        {advice !== "" && (<p className='advice'>&#8220;{advice.advice}&#8221;</p>)} 
+        {/* <p className="number">ADVICE # {advice.id}</p> */}
+
+        <button type="submit" onClick={handleClick}>
+        <IconDice/>
+        </button>
+      <SmallDivider className="smallDivide"/>
+      <BigDivider className="bigDivide"/>
         </div>
 
       </div>  

@@ -1,9 +1,3 @@
-@media only screen and (max-width: 375px) {
-  .card {
-    /* background-color: hsl(217, 19%, 24%); */
-    background-color: pink;
-  }
-}
 
 body {
   margin: 0;
@@ -29,6 +23,8 @@ body {
 .card {
   position: relative;
   max-width: 600px;
+  /* min-width: 375px; */
+  /* min-height: 300px; */
   height: 300px;
   border-radius: 20px;
   background-color: hsl(217, 19%, 24%);
@@ -36,6 +32,12 @@ body {
 
 p{
   font-family: 'Manrope', sans-serif;
+  overflow-wrap: break-word;
+  font-family: 'Manrope', sans-serif;
+  /* padding: 5px; */
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
 }
 
 .number {
@@ -46,6 +48,14 @@ p{
 .advice {
   color: white;
   font-size: 28px;
+}
+
+.bigDivide {
+  margin: auto;
+  display: block;
+}
+.smallDivide {
+  display: none;
 }
 
 button {
@@ -65,4 +75,21 @@ button {
 
 button:hover {
   box-shadow: 0 0 30px #52ffa8;
+}
+
+@media only screen and (max-width: 375px) {
+  .card {
+    width: 80%;
+    height: 400px;
+  }
+  button {
+    top: 375px;
+  }
+  .bigDivide {
+    display: none;
+  }
+  .smallDivide {
+    margin: auto;
+    display: block;
+  }
 }
